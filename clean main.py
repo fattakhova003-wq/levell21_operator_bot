@@ -3,8 +3,7 @@ import logging
 
 from telegram import (
     Update,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
+    
 )
 
 from telegram.ext import (
@@ -13,7 +12,10 @@ from telegram.ext import (
     CallbackQueryHandler,
     ContextTypes,
 )
-
+from keyboards import (
+    keyboard_start,
+    keyboard_wait,
+)
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(message)s",
     level=logging.INFO
@@ -57,30 +59,6 @@ WAIT_TEXT = """
 
 Дальнейшие сообщения будут поступать автоматически.
 """
-
-
-keyboard_start = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                "✅ ПОДТВЕРДИТЬ ПОЛУЧЕНИЕ",
-                callback_data="confirm"
-            )
-        ]
-    ]
-)
-
-
-keyboard_wait = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                "🛰 ОЖИДАЮ ДАЛЬНЕЙШИХ ИНСТРУКЦИЙ",
-                callback_data="wait"
-            )
-        ]
-    ]
-)
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
