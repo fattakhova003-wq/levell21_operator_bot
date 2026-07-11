@@ -86,6 +86,9 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             WAIT_TEXT
         )
 
+        await query.message.reply_text(
+            MESSAGES["road"]
+        )
 
 def main():
     app = Application.builder().token(BOT_TOKEN).build()
