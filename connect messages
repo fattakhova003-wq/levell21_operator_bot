@@ -16,6 +16,8 @@ from keyboards import (
     keyboard_start,
     keyboard_wait,
 )
+
+from messages import MESSAGES
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(message)s",
     level=logging.INFO
