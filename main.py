@@ -92,10 +92,13 @@ async def button_handler(
 
 
     if query.data == "wait":
+    await query.edit_message_text(
+        WAIT_TEXT
+    )
 
-        await query.edit_message_text(
-            WAIT_TEXT
-        )
+    await query.message.reply_text(
+        MESSAGES["road"]
+    )
 
         await query.message.reply_text(
             MESSAGES["road"]
