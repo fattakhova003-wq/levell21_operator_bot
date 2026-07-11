@@ -39,3 +39,28 @@ keyboard_hotel = InlineKeyboardMarkup(
         ]
     ]
 )
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+
+
+keyboard_hotel = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                "🏨 ПОДТВЕРДИТЬ ОТЕЛЬ",
+                callback_data="hotel_confirm"
+            )
+        ]
+    ]
+)
+
+
+keyboard_location = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                "📍 ПОЛУЧИТЬ ЛОКАЦИЮ",
+                callback_data="location"
+            )
+        ]
+    ]
+)
