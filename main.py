@@ -91,9 +91,14 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
         await query.message.reply_text(
-    MESSAGES["road"],
-    reply_markup=keyboard_hotel
-)
+            MESSAGES["road"],
+            reply_markup=keyboard_hotel
+        )
+
+    if query.data == "hotel":
+        await query.message.reply_text(
+            MESSAGES["hotel"]
+        )
 def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
@@ -124,7 +129,4 @@ def main():
 if __name__ == "__main__":
 
     main()
-if query.data == "hotel":
-    await query.message.reply_text(
-        MESSAGES["hotel"]
-    )
+
