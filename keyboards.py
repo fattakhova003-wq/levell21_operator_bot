@@ -26,3 +26,16 @@ keyboard_wait = InlineKeyboardMarkup(
         ]
     ]
 )
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+
+
+keyboard_hotel = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                "➡️ ПРОДОЛЖИТЬ ОПЕРАЦИЮ",
+                callback_data="hotel"
+            )
+        ]
+    ]
+)
