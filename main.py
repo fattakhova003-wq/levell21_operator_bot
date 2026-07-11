@@ -13,6 +13,8 @@ from telegram.ext import (
 from keyboards import (
     keyboard_start,
     keyboard_wait,
+    keyboard_hotel,
+)
 )
 
 from messages import MESSAGES
