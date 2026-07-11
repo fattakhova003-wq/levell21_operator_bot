@@ -73,38 +73,24 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
-async def button_handler(
-    update: Update,
-    context: ContextTypes.DEFAULT_TYPE
-):
-
+async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-
     await query.answer()
 
-
     if query.data == "confirm":
-
         await query.edit_message_text(
             CONFIRM_TEXT,
             reply_markup=keyboard_wait
         )
 
-
     if query.data == "wait":
-    await query.edit_message_text(
-        WAIT_TEXT
-    )
-
-    await query.message.reply_text(
-        MESSAGES["road"]
-    )
+        await query.edit_message_text(
+            WAIT_TEXT
+        )
 
         await query.message.reply_text(
             MESSAGES["road"]
         )
-
-
 def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
