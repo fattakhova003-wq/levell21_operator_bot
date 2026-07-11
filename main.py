@@ -96,9 +96,10 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     if query.data == "hotel":
-        await query.message.reply_text(
-            MESSAGES["hotel"]
-        )if query.data == "hotel":
+    await query.message.reply_text(
+        MESSAGES["hotel"]
+    )
+        query.data == "hotel":
     await query.edit_message_text(
         MESSAGES["hotel"],
         reply_markup=keyboard_location
