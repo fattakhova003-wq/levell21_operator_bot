@@ -13,6 +13,7 @@ STATUS:
 🟢 ACTIVE
 """,
 
+
     "hotel": """
 🏨 HOTEL MODULE
 
@@ -23,129 +24,17 @@ STATUS:
 Ожидается подтверждение.
 """,
 
-    "location": """
-📍 LOCATION MODULE
-
-Координаты получены.
-
-Следующий этап разблокирован.
-
-STATUS:
-🟢 LOCATION VERIFIED
-""",
 
     "tube": """
-🔐 LEVEL 21 SYSTEM
+🌀 AEROTUBE MODULE
 
 Проверка готовности агента завершена.
 
 Физическое испытание разрешено.
 
-STATUS:
-🟢 ACTIVE
-""",
-
-    "football": """
-🔐 LEVEL 21 SYSTEM
-
-Получен новый вызов.
-
-Спортивное испытание активировано.
+Следующий этап операции разблокирован.
 
 STATUS:
 🟢 ACTIVE
-""",
-
-    "lounge": """
-🔐 LEVEL 21 SYSTEM
-
-Открыт доступ к архивным материалам.
-
-STATUS:
-🟢 ACTIVE
-""",
-
-    "midnight": """
-🔐 LEVEL 21 SYSTEM
-
-Возраст агента обновлён.
-
-LEVEL 21
-
-АКТИВЕН.
-
-STATUS:
-🟢 ONLINE
-""",
-
-    "morning": """
-🔐 LEVEL 21 SYSTEM
-
-Соединение восстановлено.
-
-Операция продолжается.
-
-STATUS:
-🟢 ACTIVE
-""",
-
-    "elabuga": """
-🔐 LEVEL 21 SYSTEM
-
-Маршрут обновлён.
-
-Ожидается поступление новых материалов.
-
-STATUS:
-🟢 ACTIVE
-""",
-
-    "detailing": """
-🔐 LEVEL 21 SYSTEM
-
-Объект передан на обслуживание.
-
-Ожидайте завершения процедуры.
-
-STATUS:
-🟢 ACTIVE
-""",
-
-    "questionnaire": """
-🔐 LEVEL 21 SYSTEM
-
-Необходимо заполнить финальный протокол.
-
-STATUS:
-🟢 ACTIVE
-""",
-
-    "return": """
-🔐 LEVEL 21 SYSTEM
-
-Объект возвращён.
-
-Все параметры соответствуют норме.
-
-STATUS:
-🟢 ACTIVE
-""",
-
-    "final": """
-🔐 LEVEL 21 SYSTEM
-
-Все этапы операции выполнены.
-
-██████████████
-
-100%
-
-ACCESS GRANTED
-
-LEVEL 21
-
-ОПЕРАЦИЯ ЗАВЕРШЕНА
-
-🟢 STATUS COMPLETE
 """
 }
