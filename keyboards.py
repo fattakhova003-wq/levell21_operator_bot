@@ -2,60 +2,21 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 keyboard_start = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                "✅ ПОДТВЕРДИТЬ ПОЛУЧЕНИЕ",
-                callback_data="confirm"
-            )
-        ]
-    ]
+    [[InlineKeyboardButton("✅ ПОДТВЕРДИТЬ ПОЛУЧЕНИЕ", callback_data="confirm")]]
 )
-
 
 keyboard_wait = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                "🛰 ОЖИДАЮ ДАЛЬНЕЙШИХ ИНСТРУКЦИЙ",
-                callback_data="wait"
-            )
-        ]
-    ]
+    [[InlineKeyboardButton("🛰 ОЖИДАЮ ДАЛЬНЕЙШИХ ИНСТРУКЦИЙ", callback_data="wait")]]
 )
-
 
 keyboard_hotel = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                "🏨 ПОДТВЕРДИТЬ ОТЕЛЬ",
-                callback_data="hotel"
-            )
-        ]
-    ]
+    [[InlineKeyboardButton("🏨 ПОДТВЕРДИТЬ ОТЕЛЬ", callback_data="hotel")]]
 )
-
 
 keyboard_tube = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                "🌪 ЗАПУСТИТЬ ИСПЫТАНИЕ",
-                callback_data="tube"
-            )
-        ]
-    ]
+    [[InlineKeyboardButton("🌪 ЗАПУСТИТЬ ИСПЫТАНИЕ", callback_data="tube")]]
 )
 
-
-keyboard_location = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                "📍 ПОЛУЧИТЬ ЛОКАЦИЮ",
-                callback_data="location"
-            )
-        ]
-    ]
+keyboard_football = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("⚽ ПРИНЯТЬ ВЫЗОВ", callback_data="football")]]
 )
