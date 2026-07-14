@@ -87,21 +87,22 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     if query.data == "wait":
-        await query.edit_message_text(
-            WAIT_TEXT
-        )
+    await query.edit_message_text(
+        WAIT_TEXT
+    )
 
-        await query.message.reply_text(
-            MESSAGES["road"],
-            reply_markup=keyboard_hotel
-        )
+    await query.message.reply_text(
+        MESSAGES["road"],
+        reply_markup=keyboard_hotel
+    )
 
-    if query.data == "hotel":
+if query.data == "hotel":
     await query.message.reply_text(
         MESSAGES["hotel"],
         reply_markup=keyboard_location
     )
-    if query.data == "location":
+
+if query.data == "location":
     await query.message.reply_text(
         MESSAGES["location"]
     )
