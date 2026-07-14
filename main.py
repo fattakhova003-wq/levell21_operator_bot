@@ -14,9 +14,8 @@ from keyboards import (
     keyboard_start,
     keyboard_wait,
     keyboard_hotel,
-    keyboard_location,
+    keyboard_tube,
 )
-
 
 from messages import MESSAGES
 
@@ -28,10 +27,6 @@ logging.basicConfig(
 
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-
-OWNER_ID = int(os.getenv("OWNER_ID"))
-
-AGENT_ID = int(os.getenv("AGENT_ID"))
 
 
 START_TEXT = """
@@ -77,16 +72,22 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
     query = update.callback_query
+
     await query.answer()
 
+
     if query.data == "confirm":
+
         await query.edit_message_text(
             CONFIRM_TEXT,
             reply_markup=keyboard_wait
         )
 
-    if query.data == "wait":
+
+    elif query.data == "wait":
+
         await query.edit_message_text(
             WAIT_TEXT
         )
@@ -96,21 +97,27 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=keyboard_hotel
         )
 
-    if query.data == "hotel":
+
+    elif query.data == "hotel":
+
         await query.message.reply_text(
             MESSAGES["hotel"],
-            reply_markup=keyboard_location
+            reply_markup=keyboard_tube
         )
 
-    if query.data == "location":
+
+    elif query.data == "tube":
+
         await query.message.reply_text(
-            MESSAGES["location"]
+            MESSAGES["tube"]
         )
+
 
 
 def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
+
 
     app.add_handler(
         CommandHandler(
@@ -119,16 +126,21 @@ def main():
         )
     )
 
+
     app.add_handler(
         CallbackQueryHandler(
             button_handler
         )
     )
 
+
     print("LEVEL21 BOT STARTED")
+
 
     app.run_polling()
 
 
+
 if __name__ == "__main__":
+
     main()
