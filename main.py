@@ -15,6 +15,7 @@ from keyboards import (
     keyboard_wait,
     keyboard_hotel,
     keyboard_tube,
+    keyboard_football,
 )
 
 from messages import MESSAGES
@@ -76,14 +77,12 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
-
     if query.data == "confirm":
 
         await query.edit_message_text(
             CONFIRM_TEXT,
             reply_markup=keyboard_wait
         )
-
 
     elif query.data == "wait":
 
@@ -96,7 +95,6 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=keyboard_hotel
         )
 
-
     elif query.data == "hotel":
 
         await query.message.reply_text(
@@ -104,19 +102,23 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=keyboard_tube
         )
 
-
     elif query.data == "tube":
 
         await query.message.reply_text(
-            MESSAGES["tube"]
+            MESSAGES["tube"],
+            reply_markup=keyboard_football
         )
 
+    elif query.data == "football":
+
+        await query.message.reply_text(
+            MESSAGES["football"]
+        )
 
 
 def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
-
 
     app.add_handler(
         CommandHandler(
@@ -125,19 +127,15 @@ def main():
         )
     )
 
-
     app.add_handler(
         CallbackQueryHandler(
             button_handler
         )
     )
 
-
     print("LEVEL21 BOT STARTED")
 
-
     app.run_polling()
-
 
 
 if __name__ == "__main__":
