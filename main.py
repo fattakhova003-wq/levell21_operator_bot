@@ -136,9 +136,4 @@ def main():
 if __name__ == "__main__":
 
     main()
-from keyboards import (
-    keyboard_start,
-    keyboard_wait,
-    keyboard_hotel,
-    keyboard_location,
-)
+
