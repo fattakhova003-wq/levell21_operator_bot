@@ -37,12 +37,36 @@ keyboard_hotel = InlineKeyboardMarkup(
 )
 
 
+keyboard_location = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                "📍 ПОЛУЧИТЬ ЛОКАЦИЮ",
+                callback_data="location"
+            )
+        ]
+    ]
+)
+
+
 keyboard_tube = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                "🌀 НАЧАТЬ АЭРОТРУБУ",
+                "🌪 НАЧАТЬ АЭРОТРУБУ",
                 callback_data="tube"
+            )
+        ]
+    ]
+)
+
+
+keyboard_football = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                "⚽ НАЧАТЬ СПОРТИВНОЕ ИСПЫТАНИЕ",
+                callback_data="football"
             )
         ]
     ]
