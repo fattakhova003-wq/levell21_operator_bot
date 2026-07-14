@@ -1,7 +1,4 @@
-from telegram import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-)
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 keyboard_start = InlineKeyboardMarkup(
@@ -40,12 +37,12 @@ keyboard_hotel = InlineKeyboardMarkup(
 )
 
 
-keyboard_location = InlineKeyboardMarkup(
+keyboard_tube = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                "📍 ПОЛУЧИТЬ ЛОКАЦИЮ",
-                callback_data="location"
+                "🌀 НАЧАТЬ АЭРОТРУБУ",
+                callback_data="tube"
             )
         ]
     ]
