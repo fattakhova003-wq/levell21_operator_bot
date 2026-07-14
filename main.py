@@ -87,53 +87,23 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     if query.data == "wait":
-    await query.edit_message_text(
-        WAIT_TEXT
-    )
-
-    await query.message.reply_text(
-        MESSAGES["road"],
-        reply_markup=keyboard_hotel
-    )
-
-if query.data == "hotel":
-    await query.message.reply_text(
-        MESSAGES["hotel"],
-        reply_markup=keyboard_location
-    )
-
-if query.data == "location":
-    await query.message.reply_text(
-        MESSAGES["location"]
-    )
-def main():
-
-    app = Application.builder().token(BOT_TOKEN).build()
-
-
-    app.add_handler(
-        CommandHandler(
-            "start",
-            start
+        await query.edit_message_text(
+            WAIT_TEXT
         )
-    )
 
-
-    app.add_handler(
-        CallbackQueryHandler(
-            button_handler
+        await query.message.reply_text(
+            MESSAGES["road"],
+            reply_markup=keyboard_hotel
         )
-    )
 
+    if query.data == "hotel":
+        await query.message.reply_text(
+            MESSAGES["hotel"],
+            reply_markup=keyboard_location
+        )
 
-    print("LEVEL21 BOT STARTED")
-
-
-    app.run_polling()
-
-
-
-if __name__ == "__main__":
-
-    main()
+    if query.data == "location":
+        await query.message.reply_text(
+            MESSAGES["location"]
+        )
 
