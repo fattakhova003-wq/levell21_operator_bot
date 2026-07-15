@@ -121,4 +121,4 @@ print("LEVEL21 BOT STARTED")
 
 app.run_polling()
 if name == "main":
-main()
+    main()
