@@ -25,9 +25,12 @@ keyboard_football = InlineKeyboardMarkup(
     [[InlineKeyboardButton("⚽ ПРИНЯТЬ ВЫЗОВ", callback_data="football")]]
 )
 
-
 keyboard_lounge = InlineKeyboardMarkup(
     [[InlineKeyboardButton("🛋 ОТКРЫТЬ LOUNGE", callback_data="lounge")]]
+)
+
+keyboard_detailing = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("🚗 ПЕРЕДАТЬ ОБЪЕКТ", callback_data="detailing")]]
 )
 
 
