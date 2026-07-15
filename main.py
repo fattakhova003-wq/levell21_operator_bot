@@ -128,7 +128,8 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_text(
             MESSAGES["midnight"]
         )
-        def main():
+        
+def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
 
