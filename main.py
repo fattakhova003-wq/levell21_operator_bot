@@ -23,6 +23,7 @@ from keyboards import (
     keyboard_detailing,
     keyboard_questionnaire,
     keyboard_return,
+    keyboard_final,
 )
 
 from messages import MESSAGES
@@ -166,7 +167,14 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "return":
 
         await query.message.reply_text(
-        MESSAGES["return"]
+        MESSAGES["return"],
+        reply_markup=keyboard_final
+    )
+
+    elif query.data == "final":
+
+        await query.message.reply_text(
+        MESSAGES["final"]
     )
         
 def main():
