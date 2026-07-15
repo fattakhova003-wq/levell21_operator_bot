@@ -101,8 +101,8 @@ elif query.data == "midnight":
     await query.message.reply_text(
         MESSAGES["midnight"]
     )
-    def main():
-app = Application.builder().token(BOT_TOKEN).build()
+def main():
+    app = Application.builder().token(BOT_TOKEN).build()
 
 app.add_handler(
     CommandHandler(
