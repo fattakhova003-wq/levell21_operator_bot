@@ -22,6 +22,7 @@ from keyboards import (
     keyboard_elabuga,
     keyboard_detailing,
     keyboard_questionnaire,
+    keyboard_return,
 )
 
 from messages import MESSAGES
@@ -158,7 +159,14 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "questionnaire":
 
         await query.message.reply_text(
-        MESSAGES["questionnaire"]
+        MESSAGES["questionnaire"],
+        reply_markup=keyboard_return
+    )
+
+    elif query.data == "return":
+
+        await query.message.reply_text(
+        MESSAGES["return"]
     )
         
 def main():
