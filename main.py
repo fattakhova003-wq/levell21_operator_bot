@@ -18,6 +18,7 @@ from keyboards import (
     keyboard_football,
     keyboard_lounge,
     keyboard_midnight,
+    keyboard_morning,
 )
 
 from messages import MESSAGES
