@@ -34,6 +34,7 @@ keyboard_lounge = InlineKeyboardMarkup(
 keyboard_midnight = InlineKeyboardMarkup(
     [[InlineKeyboardButton("🌙 НАЧАТЬ НОЧНОЙ ЭТАП", callback_data="midnight")]]
 )
+
 keyboard_morning = InlineKeyboardMarkup(
     [[InlineKeyboardButton("☀️ НАЧАТЬ НОВЫЙ ДЕНЬ", callback_data="morning")]]
 )
