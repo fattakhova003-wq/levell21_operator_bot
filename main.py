@@ -41,24 +41,21 @@ WAIT_TEXT = """
 Дальнейшие сообщения будут поступать автоматически.
 """
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-    START_TEXT,
-    parse_mode="HTML",
-    reply_markup=keyboard_start
-    )
+await update.message.reply_text(
+START_TEXT,
+parse_mode="HTML",
+reply_markup=keyboard_start
+)
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-       query = update.callback_query
-       await query.answer()
-
+query = update.callback_query
+await query.answer()
 if query.data == "confirm":
-
     await query.edit_message_text(
         CONFIRM_TEXT,
         reply_markup=keyboard_wait
     )
 
 elif query.data == "wait":
-
     await query.edit_message_text(
         WAIT_TEXT
     )
@@ -69,41 +66,35 @@ elif query.data == "wait":
     )
 
 elif query.data == "hotel":
-
     await query.message.reply_text(
         MESSAGES["hotel"],
         reply_markup=keyboard_tube
     )
 
 elif query.data == "tube":
-
     await query.message.reply_text(
         MESSAGES["tube"],
         reply_markup=keyboard_football
     )
 
 elif query.data == "football":
-
     await query.message.reply_text(
         MESSAGES["football"],
         reply_markup=keyboard_lounge
     )
 
 elif query.data == "lounge":
-
     await query.message.reply_text(
         MESSAGES["lounge"],
         reply_markup=keyboard_midnight
     )
 
 elif query.data == "midnight":
-
     await query.message.reply_text(
         MESSAGES["midnight"]
     )
 def main():
-    app = Application.builder().token(BOT_TOKEN).build()
-
+app = Application.builder().token(BOT_TOKEN).build()
 app.add_handler(
     CommandHandler(
         "start",
@@ -121,4 +112,4 @@ print("LEVEL21 BOT STARTED")
 
 app.run_polling()
 if name == "main":
-    main()
+main()
