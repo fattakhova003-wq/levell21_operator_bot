@@ -45,3 +45,7 @@ keyboard_morning = InlineKeyboardMarkup(
 keyboard_elabuga = InlineKeyboardMarkup(
     [[InlineKeyboardButton("📍 ПОДТВЕРДИТЬ ПРИБЫТИЕ", callback_data="elabuga")]]
 )
+
+keyboard_questionnaire = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("📋 ОТКРЫТЬ ПРОТОКОЛ", callback_data="questionnaire")]]
+)
