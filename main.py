@@ -1,3 +1,4 @@
+```python
 import os
 import logging
 
@@ -17,6 +18,7 @@ from keyboards import (
     keyboard_tube,
     keyboard_football,
     keyboard_lounge,
+    keyboard_midnight,
 )
 
 from messages import MESSAGES
@@ -120,10 +122,17 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "lounge":
 
         await query.message.reply_text(
-            MESSAGES["lounge"]
+            MESSAGES["lounge"],
+            reply_markup=keyboard_midnight
         )
 
+    elif query.data == "midnight":
 
+        await query.message.reply_text(
+            MESSAGES["midnight"]
+        )
+```
+```python
 def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
@@ -148,3 +157,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
