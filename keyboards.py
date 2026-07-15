@@ -49,3 +49,7 @@ keyboard_elabuga = InlineKeyboardMarkup(
 keyboard_questionnaire = InlineKeyboardMarkup(
     [[InlineKeyboardButton("📋 ОТКРЫТЬ ПРОТОКОЛ", callback_data="questionnaire")]]
 )
+
+keyboard_return = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("🔙 ПОДТВЕРДИТЬ ВОЗВРАЩЕНИЕ", callback_data="return")]]
+)
