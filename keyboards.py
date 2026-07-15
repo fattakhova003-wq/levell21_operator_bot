@@ -20,3 +20,7 @@ keyboard_tube = InlineKeyboardMarkup(
 keyboard_football = InlineKeyboardMarkup(
     [[InlineKeyboardButton("⚽ ПРИНЯТЬ ВЫЗОВ", callback_data="football")]]
 )
+
+keyboard_lounge = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("🛋 ОТКРЫТЬ LOUNGE", callback_data="lounge")]]
+)
