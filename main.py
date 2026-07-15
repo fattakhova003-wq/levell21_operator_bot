@@ -19,6 +19,7 @@ from keyboards import (
     keyboard_lounge,
     keyboard_midnight,
     keyboard_morning,
+    keyboard_elabuga,
 )
 
 from messages import MESSAGES
@@ -133,8 +134,15 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif query.data == "morning":
 
-        await query.message.reply_text(
-        MESSAGES["morning"]
+    await query.message.reply_text(
+        MESSAGES["morning"],
+        reply_markup=keyboard_elabuga
+    )
+
+    elif query.data == "elabuga":
+
+    await query.message.reply_text(
+        MESSAGES["elabuga"]
     )
         
 def main():
