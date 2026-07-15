@@ -38,3 +38,7 @@ keyboard_midnight = InlineKeyboardMarkup(
 keyboard_morning = InlineKeyboardMarkup(
     [[InlineKeyboardButton("☀️ НАЧАТЬ НОВЫЙ ДЕНЬ", callback_data="morning")]]
 )
+
+keyboard_elabuga = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("📍 ПОДТВЕРДИТЬ ПРИБЫТИЕ", callback_data="elabuga")]]
+)
