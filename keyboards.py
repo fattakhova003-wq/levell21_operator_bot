@@ -53,3 +53,7 @@ keyboard_questionnaire = InlineKeyboardMarkup(
 keyboard_return = InlineKeyboardMarkup(
     [[InlineKeyboardButton("🔙 ПОДТВЕРДИТЬ ВОЗВРАЩЕНИЕ", callback_data="return")]]
 )
+
+keyboard_final = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("🏁 ЗАВЕРШИТЬ ОПЕРАЦИЮ", callback_data="final")]]
+)
