@@ -16,6 +16,7 @@ from keyboards import (
     keyboard_hotel,
     keyboard_tube,
     keyboard_football,
+    keyboard_lounge,
 )
 
 from messages import MESSAGES
@@ -112,7 +113,14 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "football":
 
         await query.message.reply_text(
-            MESSAGES["football"]
+            MESSAGES["football"],
+            reply_markup=keyboard_lounge
+        )
+
+    elif query.data == "lounge":
+
+        await query.message.reply_text(
+            MESSAGES["lounge"]
         )
 
 
