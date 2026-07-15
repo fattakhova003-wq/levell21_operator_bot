@@ -127,8 +127,15 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "midnight":
 
         await query.message.reply_text(
-            MESSAGES["midnight"]
-        )
+        MESSAGES["midnight"],
+        reply_markup=keyboard_morning
+    )
+
+    elif query.data == "morning":
+
+        await query.message.reply_text(
+        MESSAGES["morning"]
+    )
         
 def main():
 
