@@ -1,5 +1,6 @@
 import os
 import logging
+import httpx
 
 from telegram import Update
 
