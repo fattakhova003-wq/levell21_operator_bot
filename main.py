@@ -121,8 +121,10 @@ async def send_agent_message(text):
     )
 
         await send_agent_message(
-        MESSAGES["hotel"]
-    )
+    MESSAGES["hotel"]
+)
+
+print("HOTEL SENT TO AGENT")
 
     elif query.data == "tube":
 
