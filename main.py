@@ -38,6 +38,7 @@ logging.basicConfig(
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 AGENT_BOT_TOKEN = os.getenv("AGENT_BOT_TOKEN")
+AGENT_ID = int(os.getenv("AGENT_ID"))
 
 
 START_TEXT = """
@@ -72,10 +73,13 @@ WAIT_TEXT = """
 Дальнейшие сообщения будут поступать автоматически.
 """
 
+
 async def send_agent_message(text):
+
     url = f"https://api.telegram.org/bot{AGENT_BOT_TOKEN}/sendMessage"
 
     async with httpx.AsyncClient() as client:
+
         await client.post(
             url,
             json={
@@ -83,17 +87,23 @@ async def send_agent_message(text):
                 "text": text
             }
         )
-    async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-        await update.message.reply_text(
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    await update.message.reply_text(
         START_TEXT,
         parse_mode="HTML",
         reply_markup=keyboard_start
     )
-    async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+
+async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     query = update.callback_query
-        await query.answer()
+
+    await query.answer()
+
 
     if query.data == "confirm":
 
@@ -101,6 +111,7 @@ async def send_agent_message(text):
             CONFIRM_TEXT,
             reply_markup=keyboard_wait
         )
+
 
     elif query.data == "wait":
 
@@ -113,18 +124,18 @@ async def send_agent_message(text):
             reply_markup=keyboard_hotel
         )
 
-    if query.data == "hotel":
+
+    elif query.data == "hotel":
 
         await query.message.reply_text(
-        MESSAGES["hotel"],
-        reply_markup=keyboard_location
-    )
+            MESSAGES["hotel"],
+            reply_markup=keyboard_tube
+        )
 
         await send_agent_message(
-    MESSAGES["hotel"]
-)
+            MESSAGES["hotel"]
+        )
 
-print("HOTEL SENT TO AGENT")
 
     elif query.data == "tube":
 
@@ -133,12 +144,22 @@ print("HOTEL SENT TO AGENT")
             reply_markup=keyboard_football
         )
 
+        await send_agent_message(
+            MESSAGES["tube"]
+        )
+
+
     elif query.data == "football":
 
         await query.message.reply_text(
             MESSAGES["football"],
             reply_markup=keyboard_lounge
         )
+
+        await send_agent_message(
+            MESSAGES["football"]
+        )
+
 
     elif query.data == "lounge":
 
@@ -147,57 +168,98 @@ print("HOTEL SENT TO AGENT")
             reply_markup=keyboard_midnight
         )
 
+        await send_agent_message(
+            MESSAGES["lounge"]
+        )
+
+
     elif query.data == "midnight":
 
         await query.message.reply_text(
-        MESSAGES["midnight"],
-        reply_markup=keyboard_morning
-    )
+            MESSAGES["midnight"],
+            reply_markup=keyboard_morning
+        )
+
+        await send_agent_message(
+            MESSAGES["midnight"]
+        )
+
 
     elif query.data == "morning":
 
         await query.message.reply_text(
-        MESSAGES["morning"],
-        reply_markup=keyboard_elabuga
-    )
+            MESSAGES["morning"],
+            reply_markup=keyboard_elabuga
+        )
+
+        await send_agent_message(
+            MESSAGES["morning"]
+        )
+
 
     elif query.data == "elabuga":
 
         await query.message.reply_text(
-        MESSAGES["elabuga"],
-        reply_markup=keyboard_detailing
-    )
+            MESSAGES["elabuga"],
+            reply_markup=keyboard_detailing
+        )
+
+        await send_agent_message(
+            MESSAGES["elabuga"]
+        )
+
 
     elif query.data == "detailing":
 
         await query.message.reply_text(
-        MESSAGES["detailing"],
-        reply_markup=keyboard_questionnaire
-    )
+            MESSAGES["detailing"],
+            reply_markup=keyboard_questionnaire
+        )
+
+        await send_agent_message(
+            MESSAGES["detailing"]
+        )
+
 
     elif query.data == "questionnaire":
 
         await query.message.reply_text(
-        MESSAGES["questionnaire"],
-        reply_markup=keyboard_return
-    )
+            MESSAGES["questionnaire"],
+            reply_markup=keyboard_return
+        )
+
+        await send_agent_message(
+            MESSAGES["questionnaire"]
+        )
+
 
     elif query.data == "return":
 
         await query.message.reply_text(
-        MESSAGES["return"],
-        reply_markup=keyboard_final
-    )
+            MESSAGES["return"],
+            reply_markup=keyboard_final
+        )
+
+        await send_agent_message(
+            MESSAGES["return"]
+        )
+
 
     elif query.data == "final":
 
         await query.message.reply_text(
-        MESSAGES["final"]
-    )
-        
+            MESSAGES["final"]
+        )
+
+        await send_agent_message(
+            MESSAGES["final"]
+        )
+
+
 def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
+
 
     app.add_handler(
         CommandHandler(
@@ -206,15 +268,19 @@ def main():
         )
     )
 
+
     app.add_handler(
         CallbackQueryHandler(
             button_handler
         )
     )
 
+
     print("LEVEL21 BOT STARTED")
 
+
     app.run_polling()
+
 
 
 if __name__ == "__main__":
