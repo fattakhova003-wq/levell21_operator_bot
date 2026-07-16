@@ -37,6 +37,7 @@ logging.basicConfig(
 
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+AGENT_BOT_TOKEN = os.getenv("AGENT_BOT_TOKEN")
 
 
 START_TEXT = """
@@ -71,18 +72,28 @@ WAIT_TEXT = """
 Дальнейшие сообщения будут поступать автоматически.
 """
 
+async def send_agent_message(text):
+    url = f"https://api.telegram.org/bot{AGENT_BOT_TOKEN}/sendMessage"
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async with httpx.AsyncClient() as client:
+        await client.post(
+            url,
+            json={
+                "chat_id": AGENT_ID,
+                "text": text
+            }
+        )
+    async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    await update.message.reply_text(
+        await update.message.reply_text(
         START_TEXT,
         parse_mode="HTML",
         reply_markup=keyboard_start
     )
-async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     query = update.callback_query
-    await query.answer()
+        await query.answer()
 
     if query.data == "confirm":
 
@@ -102,12 +113,16 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=keyboard_hotel
         )
 
-    elif query.data == "hotel":
+    if query.data == "hotel":
 
         await query.message.reply_text(
-            MESSAGES["hotel"],
-            reply_markup=keyboard_tube
-        )
+        MESSAGES["hotel"],
+        reply_markup=keyboard_location
+    )
+
+        await send_agent_message(
+        MESSAGES["hotel"]
+    )
 
     elif query.data == "tube":
 
